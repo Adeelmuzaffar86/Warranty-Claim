@@ -1,0 +1,583 @@
+.wrap h1 {
+
+    color: #0073aa;
+
+    font-size: 24px;
+
+    font-weight: bold;
+
+}
+
+.switch {
+
+    position: relative;
+
+    display: inline-block;
+
+    width: 40px;
+
+    height: 20px;
+
+    margin-left: 10px;
+
+}
+
+
+
+.switch input {
+
+    display: none;
+
+}
+
+
+
+.slider {
+
+    position: absolute;
+
+    cursor: pointer;
+
+    top: 0;
+
+    left: 0;
+
+    right: 0;
+
+    bottom: 0;
+
+    background-color: #ccc;
+
+    transition: 0.4s;
+
+    border-radius: 24px;
+
+}
+
+
+
+.slider:before {
+
+    position: absolute;
+
+    content: "";
+
+    height: 14px;
+
+    width: 14px;
+
+    left: 3px;
+
+    bottom: 3px;
+
+    background-color: white;
+
+    transition: 0.4s;
+
+    border-radius: 50%;
+
+}
+
+
+
+input:checked + .slider {
+
+    background-color: green;
+
+}
+
+
+
+input:checked + .slider:before {
+
+    transform: translateX(20px);
+
+}
+
+
+
+.toggler {
+
+    width: 72px;
+
+  }
+
+  
+
+  .toggler input {
+
+    display: none;
+
+  }
+
+  
+
+  .toggler label {
+
+    display: block;
+
+    position: relative;
+
+    width: 55px;
+
+    height: 25px;
+
+    border: 1px solid #d6d6d6;
+
+    border-radius: 36px;
+
+    background: #e4e8e8;
+
+    cursor: pointer;
+
+    margin: 0px;
+
+}
+
+  
+
+  .toggler label::after {
+
+    display: block;
+
+    border-radius: 100%;
+
+    background-color: #d7062a;
+
+    content: '';
+
+    animation-name: toggler-size;
+
+    animation-duration: 0.15s;
+
+    animation-timing-function: ease-out;
+
+    animation-direction: forwards;
+
+    animation-iteration-count: 1;
+
+    animation-play-state: running;
+
+  }
+
+  
+
+  .toggler label::after, .toggler label .toggler-on, .toggler label .toggler-off {
+
+    position: absolute;
+
+    top: 50%;
+
+    left: 23%;
+
+    width: 18px;
+
+    height: 18px;
+
+    transform: translateY(-50%) translateX(-50%);
+
+    transition: left 0.15s ease-in-out, background-color 0.2s ease-out, width 0.15s ease-in-out, height 0.15s ease-in-out, opacity 0.15s ease-in-out;
+
+}
+
+  
+
+  .toggler input:checked + label::after, .toggler input:checked + label .toggler-on, .toggler input:checked + label .toggler-off {
+
+    left: 75%;
+
+  }
+
+  
+
+  .toggler input:checked + label::after {
+
+    background-color: #50ac5d;
+
+    animation-name: toggler-size2;
+
+  }
+
+  
+
+  .toggler .toggler-on, .toggler .toggler-off {
+
+    opacity: 1;
+
+    z-index: 2;
+
+  }
+
+  
+
+  .toggler input:checked + label .toggler-off, .toggler input:not(:checked) + label .toggler-on {
+
+    width: 0;
+
+    height: 0;
+
+    opacity: 0;
+
+  }
+
+  
+
+  .toggler .path {
+
+    fill: none;
+
+    stroke: #fefefe;
+
+    stroke-width: 7px;
+
+    stroke-linecap: round;
+
+    stroke-miterlimit: 10;
+
+  }
+
+  
+
+  @keyframes toggler-size {
+
+    0%, 100% {
+
+      width: 26px;
+
+      height: 26px;
+
+    }
+
+  
+
+    50% {
+
+      width: 20px;
+
+      height: 20px;
+
+    }
+
+  }
+
+  
+
+  @keyframes toggler-size2 {
+
+    0%, 100% {
+
+      width: 26px;
+
+      height: 26px;
+
+    }
+
+  
+
+    50% {
+
+      width: 20px;
+
+      height: 20px;
+
+    }
+
+  }
+
+   
+
+  /* input field */
+
+  /* From Uiverse.io by AbanoubMagdy1 */ 
+
+.wave-group {
+
+    position: relative;
+
+  }
+
+  
+
+  .wave-group .input {
+
+    font-size: 16px;
+
+    padding: 0px 10px 10px 5px;
+
+    display: block;
+
+    width: 200px;
+
+    border: none;
+
+    border-bottom: 1px solid #515151;
+
+    background: transparent;
+
+  }
+
+  
+
+  .wave-group .input:focus {
+
+    outline: none;
+
+  }
+
+  
+
+  .wave-group .label {
+
+    color: #999;
+
+    font-size: 18px;
+
+    font-weight: normal;
+
+    position: absolute;
+
+    pointer-events: none;
+
+    left: 5px;
+
+    top: 10px;
+
+    display: flex;
+
+  }
+
+  
+
+  .wave-group .label-char {
+
+    transition: 0.2s ease all;
+
+    /* transition-delay: calc(var(--index) * .05s); */
+
+  }
+
+  
+
+  .wave-group .input:focus ~ label .label-char,
+
+  .wave-group .input:valid ~ label .label-char {
+
+    transform: translateY(-20px);
+
+    font-size: 14px;
+
+    color: #5264AE;
+
+  }
+
+  
+
+  .wave-group .bar {
+
+    position: relative;
+
+    display: block;
+
+    width: 200px;
+
+  }
+
+  
+
+  .wave-group .bar:before,.wave-group .bar:after {
+
+    content: '';
+
+    height: 2px;
+
+    width: 0;
+
+    bottom: 1px;
+
+    position: absolute;
+
+    background: #5264AE;
+
+    transition: 0.2s ease all;
+
+    -moz-transition: 0.2s ease all;
+
+    -webkit-transition: 0.2s ease all;
+
+  }
+
+  
+
+  .wave-group .bar:before {
+
+    left: 50%;
+
+  }
+
+  
+
+  .wave-group .bar:after {
+
+    right: 50%;
+
+  }
+
+  
+
+  .wave-group .input:focus ~ .bar:before,
+
+  .wave-group .input:focus ~ .bar:after {
+
+    width: 50%;
+
+  }
+
+  
+
+  input:focus{
+
+    outline: none !important;
+
+    border: none !important;
+
+    box-shadow: none !important;
+
+  }
+
+
+
+  /*  */
+
+  /* Container for the form */
+
+.form-wrap {
+
+    background-color: #f9f9f9;
+
+    padding: 30px;
+
+    max-width: 600px;
+
+    margin: 85px auto;
+
+    border-radius: 8px;
+
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+}
+
+
+
+.form-wrap h1 {
+
+    font-size: 24px;
+
+    color: #333;
+
+    margin-bottom: 20px;
+
+    text-align: center;
+
+}
+
+
+
+.required-mark{
+
+  color:red;
+
+}
+
+label {
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    color: #333;
+
+    margin-bottom: 8px;
+
+    display: block;
+
+}
+
+
+
+.input {
+
+    width: 100%;
+
+    padding: 0px 16px;
+
+    margin: 8px 0 16px 0;
+
+    border: 1px solid #ccc;
+
+    border-radius: 4px;
+
+    box-sizing: border-box;
+
+    font-size: 14px;
+
+}
+
+
+
+.input:focus {
+
+    border-color: #007cba;
+
+    outline: none;
+
+}
+
+
+
+input[type="submit"] {
+
+    background-color: #007cba;
+
+    color: #fff;
+
+    font-size: 16px;
+
+    padding: 12px 20px;
+
+    border: none;
+
+    border-radius: 4px;
+
+    cursor: pointer;
+
+    width: 100%;
+
+}
+
+
+
+input[type="submit"]:hover {
+
+    background-color: #005f8f;
+
+}
+
+
+
+.error {
+
+    color: red;
+
+    font-size: 14px;
+
+    margin-bottom: 20px;
+
+    text-align: center;
+
+}
+
+.user-row td{
+
+    border-bottom: 1px solid #dbdbdb;
+
+}

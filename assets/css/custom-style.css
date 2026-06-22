@@ -1,0 +1,11 @@
+.c-container{
+    max-width: 1500px;
+    margin:100px auto;
+}
+.c-container-warranty-form{
+    max-width: 800px;
+    margin:0 auto;
+}
+.login-button,.c-container-warranty-form button{
+    background: #8abd33;
+}
